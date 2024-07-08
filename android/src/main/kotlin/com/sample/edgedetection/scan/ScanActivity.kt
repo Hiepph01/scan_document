@@ -123,7 +123,8 @@ class ScanActivity : BaseActivity(), IScanView.Proxy {
                 setResult(Activity.RESULT_OK)
                 finish()
             } else {
-                finish()
+                if (intent.hasExtra(EdgeDetectionHandler.FROM_GALLERY) && intent.getBooleanExtra(EdgeDetectionHandler.FROM_GALLERY, false))
+                    finish()
             }
         }
 
