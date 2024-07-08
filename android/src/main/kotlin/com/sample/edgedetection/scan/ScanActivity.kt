@@ -123,8 +123,7 @@ class ScanActivity : BaseActivity(), IScanView.Proxy {
                 setResult(Activity.RESULT_OK)
                 finish()
             } else {
-                if (intent.hasExtra(EdgeDetectionHandler.FROM_GALLERY) && intent.getBooleanExtra(EdgeDetectionHandler.FROM_GALLERY, false))
-                    finish()
+                finish()
             }
         }
 
@@ -136,6 +135,7 @@ class ScanActivity : BaseActivity(), IScanView.Proxy {
                 }
             }else if(resultCode == Activity.RESULT_CANCELED){
                 mPresenter.start()
+                finish()
             }
             else {
                 if (intent.hasExtra(EdgeDetectionHandler.FROM_GALLERY) && intent.getBooleanExtra(EdgeDetectionHandler.FROM_GALLERY,false))
